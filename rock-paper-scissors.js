@@ -26,9 +26,17 @@ function autoPlay() {
         }, 1000);
 
         isAutoPlaying = true;
+        const autoBtnElement = document.querySelector('.js-auto-play-btn');
+        if(autoBtnElement.innerHTML === 'Auto play') {
+            autoBtnElement.innerHTML = 'stop';
+        }
+        
     }else {
         clearInterval(intervalId);
         isAutoPlaying = false;
+        const autoBtnElement = document.querySelector('.js-auto-play-btn');
+        autoBtnElement.innerHTML = 'Auto play';
+
         
     }
 }
